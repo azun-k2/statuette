@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statuette Sensors</title>
+<meta name="description" content="Free helper that lets the App Store version of Statuette show temperatures and fan speeds.">
+<style>
+  :root {
+    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: rgba(0,0,0,0.08);
+    --accent: #ff4539; --accent-text: #ffffff; --code: #f0f0f2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 56px 16px 64px; }
+  .hero { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+  .icon { width: 84px; height: 84px; border-radius: 19px; background: linear-gradient(#292f52, #0d101f); display: grid; place-items: center; flex: none; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+  .icon svg { width: 60px; height: 60px; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 20px; margin: 16px 0; }
+  .card h2 { font-size: 17px; margin: 0 0 8px; }
+  .card p, .card li { margin: 0 0 8px; color: var(--text); }
+  .card p.muted { color: var(--muted); font-size: 14px; }
+  ol { padding-left: 22px; margin: 0; }
+  li { margin-bottom: 6px; }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
+  .button { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 12px; }
+  .button:hover { filter: brightness(1.08); }
+  .small { font-size: 13px; color: var(--muted); }
+  code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
+  footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#ff4539" stroke-width="4" stroke-linecap="round">
+        <rect x="30" y="18" width="40" height="26" rx="4"/>
+        <line x1="22" y1="50" x2="78" y2="50" stroke-width="5"/>
+        <text x="50" y="84" text-anchor="middle" font-size="26" font-weight="700" fill="#ff4539" stroke="none" font-family="-apple-system, Helvetica, sans-serif">95°C</text>
+      </svg>
+    </div>
+    <div>
+      <h1>Statuette Sensors</h1>
+      <p class="sub">Temperatures and fan speeds for the App Store version of Statuette.</p>
+    </div>
+  </div>
+
+  <section class="card">
+    <h2>Why a separate helper?</h2>
+    <p>Apps from the Mac App Store run in Apple's App Sandbox, which does not allow reading the Mac's hardware sensors. Statuette Sensors is a small, free companion app that runs outside the sandbox, reads the sensors, and shares them with Statuette. Without it, Statuette still shows CPU, memory, disk, network and battery; with it, the Temperature and Fans cards light up.</p>
+    <p class="muted">It has no window or menu bar item, uses well under 1% CPU, reads sensors only, and never touches the network.</p>
+    <div class="cta">
+      <a class="button" href="https://github.com/azun-k2/statuette/releases/latest/download/Statuette-Sensors.zip">Download Statuette Sensors</a>
+      <span class="small">macOS 14 or later · Apple silicon and Intel · about 1 MB · <a href="https://github.com/azun-k2/statuette/releases">all versions</a></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Install</h2>
+    <ol>
+      <li>Unzip the download and drag <strong>Statuette Sensors</strong> to your Applications folder.</li>
+      <li>Open it once. Nothing visible happens: it starts in the background and adds itself to your login items so it is always available.</li>
+      <li>Open Statuette. The Temperature and Fans cards appear within a few seconds.</li>
+    </ol>
+    <p class="muted">The app is signed with a Developer ID and notarized by Apple, so it opens without security prompts.</p>
+  </section>
+
+  <section class="card">
+    <h2>Remove</h2>
+    <p>Quit it and drag it to the Trash. To stop it from launching at login first, run in Terminal:</p>
+    <p><code>"/Applications/Statuette Sensors.app/Contents/MacOS/StatuetteSensors" --login-item=off</code></p>
+    <p class="muted">Or remove it under System Settings › General › Login Items &amp; Extensions.</p>
+  </section>
+
+  <section class="card">
+    <h2>Verify the download</h2>
+    <p>Each release lists the SHA-256 checksum of its zip. Compare with:</p>
+    <p><code>shasum -a 256 ~/Downloads/Statuette-Sensors.zip</code></p>
+  </section>
+
+  <footer>
+    <a href="https://github.com/azun-k2/statuette/releases">Release notes and all versions</a>.
+  </footer>
+</main>
+</body>
+</html>
