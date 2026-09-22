@@ -43,6 +43,7 @@
   .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
   .button { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 12px; }
   .button:hover { filter: brightness(1.08); }
+  .steps { display: block; width: 100%; height: auto; margin: 2px 0 14px; border-radius: 10px; }
   .small { font-size: 13px; color: var(--muted); }
   code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
   footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
@@ -72,6 +73,11 @@
 
   <section class="card">
     <h2>Install</h2>
+    <picture>
+      <source srcset="helper-steps-dark.png" media="(prefers-color-scheme: dark)">
+      <img class="steps" src="helper-steps.png" width="2696" height="2184" loading="lazy" decoding="async"
+           alt="Four steps. One, the downloaded Statuette-Sensors.zip in the Downloads folder. Two, the same folder after double-clicking the zip, now holding the Statuette Sensors app. Three, the app in the Applications folder. Four, Statuette's panel showing its Temperature card filled in.">
+    </picture>
     <ol>
       <li>Unzip the download and drag <strong>Statuette Sensors</strong> to your Applications folder.</li>
       <li>Open it once. Nothing visible happens: it starts in the background and adds itself to your login items so it is always available.</li>
