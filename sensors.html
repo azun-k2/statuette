@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Statuette · system monitor for the menu bar</title>
-<meta name="description" content="Statuette shows CPU, memory, disk, network and battery in the menu bar, with a panel of detail behind every number.">
+<title>Statuette Sensors · helper for Statuette</title>
+<meta name="description" content="Free helper that lets the App Store version of Statuette show temperatures and fan speeds.">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="theme-color" content="#e3edfb" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0d0f1a" media="(prefers-color-scheme: dark)">
-<meta property="og:title" content="Statuette">
-<meta property="og:description" content="Statuette shows CPU, memory, disk, network and battery in the menu bar, with a panel of detail behind every number.">
+<meta property="og:title" content="Statuette Sensors">
+<meta property="og:description" content="Free helper that lets the App Store version of Statuette show temperatures and fan speeds.">
 <meta property="og:image" content="icon-512.png">
 <meta property="og:type" content="website">
 <style>
@@ -53,42 +53,50 @@
 <body>
 <main>
   <div class="hero">
-    <img class="icon" src="icon-512.png" width="84" height="84" alt="Statuette app icon: a gauge standing on a plinth">
+    <img class="icon" src="icon-512.png" width="84" height="84"
+         alt="Statuette app icon: a gauge standing on a plinth">
     <div>
-      <h1>Statuette</h1>
-      <p class="sub">A system monitor for your menu bar.</p>
+      <h1>Statuette Sensors</h1>
+      <p class="sub">Temperatures and fan speeds for the App Store version of Statuette.</p>
     </div>
   </div>
 
   <section class="card">
-    <h2>What it shows</h2>
-    <p>Processor load, memory pressure, free disk space, network throughput and battery, right in the
-       menu bar. Click any of them for a panel with the detail behind the number: ring gauges, the last
-       two minutes as sparklines, a heat map with one cell per core, and memory broken into app, wired
-       and compressed.</p>
+    <h2>Why a separate helper?</h2>
+    <p>Apps from the Mac App Store run in Apple's App Sandbox, which does not allow reading the Mac's hardware sensors. Statuette Sensors is a small, free companion app that runs outside the sandbox, reads the sensors, and shares them with Statuette. Without it, Statuette still shows CPU, memory, disk, network and battery; with it, the Temperature and Fans cards light up.</p>
+    <p class="muted">It has no window or menu bar item, uses well under 1% CPU, reads sensors only, and never touches the network.</p>
+    <div class="cta">
+      <a class="button" href="https://github.com/azun-k2/statuette/releases/latest/download/Statuette-Sensors.zip">Download Statuette Sensors</a>
+      <span class="small">macOS 14 or later · Apple silicon and Intel · about 350 KB · <a href="https://github.com/azun-k2/statuette/releases">all versions</a></span>
+    </div>
   </section>
 
   <section class="card">
-    <h2>Your menu bar, your way</h2>
-    <ul>
-      <li>Choose which readings appear, and in which order.</li>
-      <li>One entry per reading with its own panel, or one combined entry that opens everything.</li>
-      <li>Icons with values, or short text labels. Digits are padded, so nothing jitters.</li>
-      <li>Four colour themes, three text sizes, and an animation switch that follows Reduce Motion.</li>
-    </ul>
+    <h2>Install</h2>
+    <picture>
+      <source srcset="helper-steps-dark.png" media="(prefers-color-scheme: dark)">
+      <img class="steps" src="helper-steps.png" width="2696" height="2184" loading="lazy" decoding="async"
+           alt="Four steps. One, the downloaded Statuette-Sensors.zip in the Downloads folder. Two, the same folder after double-clicking the zip, now holding the Statuette Sensors app. Three, the app in the Applications folder. Four, Statuette's panel showing its Temperature card filled in.">
+    </picture>
+    <ol>
+      <li>Unzip the download and drag <strong>Statuette Sensors</strong> to your Applications folder.</li>
+      <li>Open it once. Nothing visible happens: it starts in the background and adds itself to your login items so it is always available.</li>
+      <li>Open Statuette. The Temperature and Fans cards appear within a few seconds.</li>
+    </ol>
+    <p class="muted">The app is signed with a Developer ID and notarized by Apple, so it opens without security prompts.</p>
   </section>
 
   <section class="card">
-    <h2>Alerts</h2>
-    <p>Give any reading a warning threshold and a critical one. Cross them and the value turns orange,
-       then red, in the menu bar and on its card. Everything is off until you switch it on.</p>
+    <h2>Remove</h2>
+    <p>Quit it and drag it to the Trash. To stop it from launching at login first, run in Terminal:</p>
+    <p><code>"/Applications/Statuette Sensors.app/Contents/MacOS/StatuetteSensors" --login-item=off</code></p>
+    <p class="muted">Or remove it under System Settings › General › Login Items &amp; Extensions.</p>
   </section>
 
   <section class="card">
-    <h2>Privacy</h2>
-    <p>Statuette only reads. It has no account, makes no network connection of any kind and collects
-       nothing. The <a href="privacy.html">privacy policy</a> says the same at more length.</p>
-    <p class="muted">Questions, or something not working? See <a href="support.html">Support</a>.</p>
+    <h2>Verify the download</h2>
+    <p>Each release lists the SHA-256 checksum of its zip. Compare with:</p>
+    <p><code>shasum -a 256 ~/Downloads/Statuette-Sensors.zip</code></p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></footer>
