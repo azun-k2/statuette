@@ -152,13 +152,13 @@
   <section class="card">
     <h2>Co aplikace čte</h2>
     <p>Statuette čte statistiky, které macOS zveřejňuje o vašem vlastním počítači: zatížení procesoru, využití paměti, volné místo na připojených discích, bajty odeslané a přijaté síťovými rozhraními, nabití a stav baterie a s volitelným pomocníkem také senzory teploty a ventilátorů.</p>
-    <p>Tyto údaje se zobrazí a pak zahodí. Aplikace uchovává v paměti dvouminutovou historii, aby mohla kreslit malé grafy. Tato historie se nikdy nezapisuje na disk a zmizí, jakmile aplikaci ukončíte.</p>
+    <p>Tyto údaje se zobrazí a uchovávají se jen tak dlouho, dokud je grafy potřebují. Poslední dvě minuty zůstávají v paměti pro malé grafy. Pro grafy historie aplikace navíc uchovává jeden průměr za minutu pro procesor, paměť, síť a stav nabití baterie za posledních 24 hodin, přičemž starší minuty průběžně přepisuje, a na Macu s baterií si jednou denně poznamená její kapacitu.</p>
     <p class="muted">Statuette jen čte. Nikdy nezapisuje do řadiče správy systému (SMC) vašeho Macu a nemůže měnit otáčky ventilátorů ani žádné jiné nastavení hardwaru.</p>
   </section>
 
   <section class="card">
     <h2>Co se ukládá ve vašem Macu</h2>
-    <p>Vaše předvolby, tedy které položky se zobrazují v řádku nabídek, meze upozornění, barevný motiv a velikost textu, ukládá macOS do vlastních předvoleb aplikace ve vašem Macu. Nikam se nepřenášejí.</p>
+    <p>Vaše předvolby, tedy které položky se zobrazují v řádku nabídek, meze upozornění, barevný motiv a velikost textu, ukládá macOS do vlastních předvoleb aplikace ve vašem Macu. Historie za 24 hodin a denní kapacita baterie se ukládají do dvou malých souborů ve vlastní složce aplikace, rovněž ve vašem Macu. Nic z toho se nikam nepřenáší.</p>
   </section>
 
   <section class="card">
@@ -169,7 +169,7 @@
   <section class="card">
     <h2>Otázky</h2>
     <p>Pište na <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Naposledy aktualizováno 22. září 2026.</p>
+    <p class="muted">Naposledy aktualizováno 1. října 2026.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Podpora</a> · <a href="privacy.html">Soukromí</a></footer>

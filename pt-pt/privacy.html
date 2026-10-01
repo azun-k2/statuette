@@ -152,13 +152,13 @@
   <section class="card">
     <h2>O que a app lê</h2>
     <p>O Statuette lê as estatísticas que o macOS publica sobre o seu próprio computador: carga do processador, utilização de memória, espaço livre nos discos montados, bytes enviados e recebidos pelas interfaces de rede, carga e estado da bateria e, com o auxiliar opcional, os sensores de temperatura e das ventoinhas.</p>
-    <p>Estes valores são apresentados e depois descartados. A app mantém em memória um histórico de dois minutos para desenhar os seus pequenos gráficos. Esse histórico nunca é gravado no disco e desaparece quando encerra a app.</p>
+    <p>Estes valores são apresentados e mantidos apenas enquanto os gráficos precisam deles. Os últimos dois minutos ficam em memória para os minigráficos. Para os gráficos de histórico, a app guarda também uma média por minuto de CPU, memória, rede e nível da bateria das últimas 24 horas, substituindo os minutos mais antigos à medida que avança, e num Mac com bateria regista a capacidade da bateria uma vez por dia.</p>
     <p class="muted">O Statuette apenas lê. Nunca escreve no controlador de gestão do sistema (SMC) do seu Mac e não consegue alterar a velocidade das ventoinhas nem qualquer outra definição do seu hardware.</p>
   </section>
 
   <section class="card">
     <h2>O que é guardado no seu Mac</h2>
-    <p>As suas preferências (que itens aparecem na barra de menus, os limiares de alerta, o tema de cores e o tamanho do texto) são guardadas pelo macOS nas preferências da própria app, no seu Mac. Não são transmitidas para lado nenhum.</p>
+    <p>As suas preferências (que itens aparecem na barra de menus, os limiares de alerta, o tema de cores e o tamanho do texto) são guardadas pelo macOS nas preferências da própria app, no seu Mac. O histórico de 24 horas e a capacidade diária da bateria ficam em dois ficheiros pequenos na pasta da própria app, também no seu Mac. Nada disto é transmitido para lado nenhum.</p>
   </section>
 
   <section class="card">
@@ -169,7 +169,7 @@
   <section class="card">
     <h2>Dúvidas</h2>
     <p>Escreva para <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Última atualização: 22 de setembro de 2026.</p>
+    <p class="muted">Última atualização: 1 de outubro de 2026.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Suporte</a> · <a href="privacy.html">Privacidade</a></footer>

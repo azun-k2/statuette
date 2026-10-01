@@ -152,13 +152,13 @@
   <section class="card">
     <h2>Vad appen läser</h2>
     <p>Statuette läser statistik som macOS tillhandahåller om din egen dator: processorbelastning, minnesanvändning, ledigt utrymme på anslutna diskar, byte som skickas och tas emot av nätverksgränssnitt, batteriets laddning och skick samt, med det valfria hjälpprogrammet, temperatur- och fläktsensorer.</p>
-    <p>Mätvärdena visas och kastas sedan. Appen håller två minuters historik i minnet för att rita sina små grafer. Historiken skrivs aldrig till disk och försvinner när du avslutar.</p>
+    <p>Mätvärdena visas och sparas bara så länge graferna behöver dem. De senaste två minuterna stannar i minnet för de små kurvorna. För historikgraferna sparar appen också ett medelvärde per minut av CPU, minne, nätverk och batterinivå för de senaste 24 timmarna och skriver löpande över de äldsta minuterna, och på en Mac med batteri antecknar den batteriets kapacitet en gång om dagen.</p>
     <p class="muted">Statuette läser bara. Den skriver aldrig till din Macs systemhanteringskontroller (SMC) och kan inte ändra fläkthastigheter eller någon annan inställning i din hårdvara.</p>
   </section>
 
   <section class="card">
     <h2>Vad som sparas på din Mac</h2>
-    <p>Dina inställningar, alltså vilka objekt som visas i menyraden, dina varningsgränser, färgtema och textstorlek, sparas av macOS i appens egna inställningar på din Mac. De skickas ingenstans.</p>
+    <p>Dina inställningar, alltså vilka objekt som visas i menyraden, dina varningsgränser, färgtema och textstorlek, sparas av macOS i appens egna inställningar på din Mac. Historiken för 24 timmar och den dagliga batterikapaciteten ligger i två små filer i appens egen mapp, också på din Mac. Inget av detta skickas någonstans.</p>
   </section>
 
   <section class="card">
@@ -169,7 +169,7 @@
   <section class="card">
     <h2>Frågor</h2>
     <p>Skriv till <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Senast uppdaterad 22 september 2026.</p>
+    <p class="muted">Senast uppdaterad 1 oktober 2026.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Support</a> · <a href="privacy.html">Integritet</a></footer>

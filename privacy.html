@@ -154,17 +154,14 @@
     <p>Statuette reads statistics that macOS publishes about your own computer: processor load,
        memory use, free space on mounted disks, bytes sent and received by network interfaces,
        battery charge and condition, and, with the optional helper, temperature and fan sensors.</p>
-    <p>These readings are displayed and then discarded. The app keeps a two-minute history in memory
-       to draw its small graphs. That history is never written to disk and is gone when you quit.</p>
+    <p>These readings are displayed and kept only as long as the graphs need them. The last two minutes stay in memory for the sparklines. For the history graphs, the app also keeps one average per minute of CPU, memory, network and battery level for the last 24 hours, overwriting older minutes as it goes, and on a Mac with a battery it notes the battery's capacity once a day.</p>
     <p class="muted">Statuette only reads. It never writes to your Mac's system management controller,
        and it cannot change fan speeds or any other setting of your hardware.</p>
   </section>
 
   <section class="card">
     <h2>What is stored on your Mac</h2>
-    <p>Your preferences, which items appear in the menu bar, your alert thresholds, colour theme and
-       text size, are saved by macOS in the app's own preferences, on your Mac. They are not
-       transmitted anywhere.</p>
+    <p>Your preferences, which items appear in the menu bar, your alert thresholds, colour theme and text size, are saved by macOS in the app's own preferences, on your Mac. The 24-hour history and the daily battery capacity are kept in two small files in the app's own folder, also on your Mac. None of this is transmitted anywhere.</p>
   </section>
 
   <section class="card">
@@ -177,7 +174,7 @@
   <section class="card">
     <h2>Questions</h2>
     <p>Write to <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Last updated 22 September 2026.</p>
+    <p class="muted">Last updated 1 October 2026.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></footer>

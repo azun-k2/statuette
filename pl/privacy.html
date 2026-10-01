@@ -152,13 +152,13 @@
   <section class="card">
     <h2>Co odczytuje aplikacja</h2>
     <p>Statuette odczytuje statystyki, które macOS udostępnia o Twoim własnym komputerze: obciążenie procesora, użycie pamięci, wolne miejsce na podłączonych dyskach, bajty wysłane i odebrane przez interfejsy sieciowe, naładowanie i kondycję baterii, a z opcjonalnym pomocnikiem także czujniki temperatury i wentylatorów.</p>
-    <p>Te odczyty są wyświetlane, a potem odrzucane. Aby rysować małe wykresy, aplikacja trzyma w pamięci dwuminutową historię. Ta historia nigdy nie jest zapisywana na dysku i znika, gdy zakończysz aplikację.</p>
+    <p>Te odczyty są wyświetlane i przechowywane tylko tak długo, jak potrzebują ich wykresy. Ostatnie dwie minuty zostają w pamięci na potrzeby małych wykresów. Na potrzeby wykresów historii aplikacja przechowuje też jedną średnią na minutę dla procesora, pamięci, sieci i poziomu naładowania baterii z ostatnich 24 godzin, na bieżąco nadpisując starsze minuty, a na Macu z baterią raz dziennie notuje jej pojemność.</p>
     <p class="muted">Statuette tylko odczytuje. Nigdy nie zapisuje niczego w kontrolerze zarządzania systemem (SMC) Twojego Maca i nie może zmieniać prędkości wentylatorów ani żadnych innych ustawień sprzętu.</p>
   </section>
 
   <section class="card">
     <h2>Co jest przechowywane na Twoim Macu</h2>
-    <p>Twoje preferencje, czyli które pozycje pojawiają się na pasku menu, progi alertów, motyw kolorystyczny i wielkość tekstu, macOS zapisuje we własnych preferencjach aplikacji, na Twoim Macu. Nie są nigdzie przesyłane.</p>
+    <p>Twoje preferencje, czyli które pozycje pojawiają się na pasku menu, progi alertów, motyw kolorystyczny i wielkość tekstu, macOS zapisuje we własnych preferencjach aplikacji, na Twoim Macu. Historia z 24 godzin i dzienne odczyty pojemności baterii są przechowywane w dwóch małych plikach we własnym folderze aplikacji, również na Twoim Macu. Nic z tego nie jest nigdzie przesyłane.</p>
   </section>
 
   <section class="card">
@@ -169,7 +169,7 @@
   <section class="card">
     <h2>Pytania</h2>
     <p>Napisz na adres <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Ostatnia aktualizacja: 22 września 2026 r.</p>
+    <p class="muted">Ostatnia aktualizacja: 1 października 2026 r.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Pomoc</a> · <a href="privacy.html">Prywatność</a></footer>

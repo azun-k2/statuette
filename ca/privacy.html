@@ -152,13 +152,13 @@
   <section class="card">
     <h2>Què llegeix l’app</h2>
     <p>Statuette llegeix les estadístiques que macOS publica sobre el teu propi ordinador: la càrrega del processador, l’ús de memòria, l’espai lliure als discos muntats, els bytes enviats i rebuts per les interfícies de xarxa, la càrrega i l’estat de la bateria i, amb l’assistent opcional, els sensors de temperatura i dels ventiladors.</p>
-    <p>Aquests valors es mostren i després es descarten. L’app guarda a la memòria un historial de dos minuts per dibuixar els seus petits gràfics. Aquest historial no s’escriu mai al disc i desapareix quan surts de l’app.</p>
+    <p>Aquests valors es mostren i només es conserven mentre els gràfics els necessiten. Els dos últims minuts es queden a la memòria per als minigràfics. Per als gràfics d’historial, l’app també guarda una mitjana per minut de la CPU, la memòria, la xarxa i el nivell de bateria de les últimes 24 hores, tot sobreescrivint els minuts més antics, i en un Mac amb bateria anota la capacitat de la bateria una vegada al dia.</p>
     <p class="muted">Statuette només llegeix. No escriu mai al controlador de gestió del sistema (SMC) del teu Mac i no pot canviar la velocitat dels ventiladors ni cap altre ajust del teu maquinari.</p>
   </section>
 
   <section class="card">
     <h2>Què es desa al teu Mac</h2>
-    <p>Les teves preferències (quins ítems apareixen a la barra de menús, els llindars d’alerta, el tema de colors i la mida del text) les desa macOS a les preferències pròpies de l’app, al teu Mac. No es transmeten enlloc.</p>
+    <p>Les teves preferències (quins ítems apareixen a la barra de menús, els llindars d’alerta, el tema de colors i la mida del text) les desa macOS a les preferències pròpies de l’app, al teu Mac. L’historial de 24 hores i la capacitat diària de la bateria es guarden en dos fitxers petits a la carpeta pròpia de l’app, també al teu Mac. Res d’això no es transmet enlloc.</p>
   </section>
 
   <section class="card">
@@ -169,7 +169,7 @@
   <section class="card">
     <h2>Preguntes</h2>
     <p>Escriu a <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Darrera actualització: 22 de setembre de 2026.</p>
+    <p class="muted">Darrera actualització: 1 d’octubre de 2026.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Assistència</a> · <a href="privacy.html">Privadesa</a></footer>

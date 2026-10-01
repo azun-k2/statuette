@@ -152,13 +152,13 @@
   <section class="card">
     <h2>Apa yang dibaca app ini</h2>
     <p>Statuette membaca statistik yang diterbitkan macOS tentang komputer Anda sendiri: beban prosesor, penggunaan memori, ruang kosong pada disk yang terpasang, byte yang dikirim dan diterima oleh antarmuka jaringan, isi daya dan kondisi baterai, serta, dengan helper opsional, sensor suhu dan kipas.</p>
-    <p>Nilai-nilai ini ditampilkan lalu dibuang. App menyimpan riwayat dua menit di memori untuk menggambar grafik kecilnya. Riwayat itu tidak pernah ditulis ke disk dan hilang saat Anda keluar dari app.</p>
+    <p>Nilai-nilai ini ditampilkan dan hanya disimpan selama grafik membutuhkannya. Dua menit terakhir tetap di memori untuk grafik kecil. Untuk grafik riwayat, app juga menyimpan satu rata-rata per menit untuk CPU, memori, jaringan, dan level baterai selama 24 jam terakhir, sambil menimpa menit-menit yang lebih lama, dan pada Mac yang memiliki baterai, app mencatat kapasitas baterai sekali sehari.</p>
     <p class="muted">Statuette hanya membaca. App ini tidak pernah menulis ke system management controller (SMC) Mac Anda, dan tidak dapat mengubah kecepatan kipas atau pengaturan perangkat keras lainnya.</p>
   </section>
 
   <section class="card">
     <h2>Apa yang disimpan di Mac Anda</h2>
-    <p>Preferensi Anda, yaitu item mana yang tampil di bilah menu, ambang peringatan, tema warna, dan ukuran teks, disimpan oleh macOS di preferensi milik app itu sendiri, di Mac Anda. Semua itu tidak dikirim ke mana pun.</p>
+    <p>Preferensi Anda, yaitu item mana yang tampil di bilah menu, ambang peringatan, tema warna, dan ukuran teks, disimpan oleh macOS di preferensi milik app itu sendiri, di Mac Anda. Riwayat 24 jam dan kapasitas baterai harian disimpan dalam dua file kecil di folder milik app itu sendiri, juga di Mac Anda. Semua itu tidak dikirim ke mana pun.</p>
   </section>
 
   <section class="card">
@@ -169,7 +169,7 @@
   <section class="card">
     <h2>Pertanyaan</h2>
     <p>Kirim email ke <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Terakhir diperbarui 22 September 2026.</p>
+    <p class="muted">Terakhir diperbarui 1 Oktober 2026.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Dukungan</a> · <a href="privacy.html">Privasi</a></footer>

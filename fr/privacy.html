@@ -152,13 +152,13 @@
   <section class="card">
     <h2>Ce que l’app lit</h2>
     <p>Statuette lit les statistiques que macOS publie sur votre propre ordinateur : la charge du processeur, l’utilisation de la mémoire, l’espace libre sur les disques montés, les octets envoyés et reçus par les interfaces réseau, la charge et l’état de la batterie et, avec l’utilitaire facultatif, les capteurs de température et de ventilateurs.</p>
-    <p>Ces valeurs sont affichées puis supprimées. L’app conserve en mémoire un historique de deux minutes pour tracer ses petits graphiques. Cet historique n’est jamais écrit sur le disque et disparaît lorsque vous quittez l’app.</p>
+    <p>Ces valeurs sont affichées et conservées seulement le temps dont les graphiques ont besoin. Les deux dernières minutes restent en mémoire pour les courbes. Pour les graphiques d’historique, l’app conserve aussi une moyenne par minute du processeur, de la mémoire, du réseau et du niveau de batterie sur les dernières 24 heures, en remplaçant les minutes plus anciennes au fur et à mesure, et, sur un Mac équipé d’une batterie, elle note sa capacité une fois par jour.</p>
     <p class="muted">Statuette se contente de lire. Elle n’écrit jamais dans le contrôleur de gestion du système (SMC) de votre Mac et ne peut modifier ni la vitesse des ventilateurs ni aucun autre réglage de votre matériel.</p>
   </section>
 
   <section class="card">
     <h2>Ce qui est enregistré sur votre Mac</h2>
-    <p>Vos préférences (les éléments affichés dans la barre des menus, vos seuils d’alerte, le thème de couleurs et la taille du texte) sont enregistrées par macOS dans les préférences propres à l’app, sur votre Mac. Elles ne sont transmises nulle part.</p>
+    <p>Vos préférences (les éléments affichés dans la barre des menus, vos seuils d’alerte, le thème de couleurs et la taille du texte) sont enregistrées par macOS dans les préférences propres à l’app, sur votre Mac. L’historique de 24 heures et la capacité quotidienne de la batterie sont conservés dans deux petits fichiers du dossier propre à l’app, également sur votre Mac. Rien de tout cela n’est transmis nulle part.</p>
   </section>
 
   <section class="card">
@@ -169,7 +169,7 @@
   <section class="card">
     <h2>Questions</h2>
     <p>Écrivez à <a href="mailto:khangazun@gmail.com">khangazun@gmail.com</a>.</p>
-    <p class="muted">Dernière mise à jour : 22 septembre 2026.</p>
+    <p class="muted">Dernière mise à jour : 1er octobre 2026.</p>
   </section>
 
   <footer><a href="./">Statuette</a> · <a href="support.html">Assistance</a> · <a href="privacy.html">Confidentialité</a></footer>
