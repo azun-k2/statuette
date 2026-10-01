@@ -41,6 +41,11 @@
   .button:hover { filter: brightness(1.08); }
   .small { font-size: 13px; color: var(--muted); }
   code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
+  nav.links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; }
+  nav.links a { text-decoration: none; font-weight: 500; color: var(--accent); background: var(--card); border: 1px solid var(--line); padding: 8px 15px; border-radius: 999px; }
+  nav.links a:hover { border-color: var(--accent); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) nav.links a { color: #7aa7ff; } }
+  :root[data-theme="dark"] nav.links a { color: #7aa7ff; }
   footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
   a { color: inherit; }
 </style>
@@ -55,6 +60,13 @@
       <p class="sub">Statuette collects nothing and makes no network connections.</p>
     </div>
   </div>
+  <nav class="links">
+    <a href="./">Home</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="mailto:khangazun@gmail.com?subject=Statuette%20support">Email support</a>
+    <!-- family:nav --><a href="./#more-apps">More apps</a><!-- /family:nav -->
+  </nav>
 
   <section class="card">
     <h2>The short version</h2>
@@ -93,7 +105,7 @@
     <p class="muted">Last updated 22 September 2026.</p>
   </section>
 
-  <footer><a href="./">Statuette</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <!-- family:nav --><a href="./#more-apps">More apps</a><!-- /family:nav --></footer>
+  <footer><a href="./">Statuette</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a></footer>
 </main>
 </body>
 </html>
