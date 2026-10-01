@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statuette Sensors · Statuette 的辅助程序</title>
+<meta name="description" content="免费的辅助程序，让 App Store 版 Statuette 能够显示温度和风扇转速。">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta name="theme-color" content="#e3edfb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f1a" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Statuette Sensors">
+<meta property="og:description" content="免费的辅助程序，让 App Store 版 Statuette 能够显示温度和风扇转速。">
+<meta property="og:image" content="../icon-512.png">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: rgba(0,0,0,0.08);
+    --accent: #3379f5; --accent-text: #ffffff; --code: #f0f0f2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 56px 16px 64px; }
+  .hero { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+  .icon { width: 84px; height: 84px; flex: none; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 20px; margin: 16px 0; }
+  .card h2 { font-size: 17px; margin: 0 0 8px; }
+  .card p, .card li { margin: 0 0 8px; color: var(--text); }
+  .card p.muted { color: var(--muted); font-size: 14px; }
+  ol { padding-left: 22px; margin: 0; }
+  li { margin-bottom: 6px; }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
+  .button { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 12px; }
+  .button:hover { filter: brightness(1.08); }
+  .steps { display: block; width: 100%; height: auto; margin: 2px 0 14px; border-radius: 10px; }
+  .small { font-size: 13px; color: var(--muted); }
+  code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
+  nav.links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; }
+  nav.links a { text-decoration: none; font-weight: 500; color: #2563d9; background: var(--card); border: 1px solid var(--line); padding: 8px 15px; border-radius: 999px; }
+  nav.links a:hover { border-color: var(--accent); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) nav.links a { color: #7aa7ff; } }
+  :root[data-theme="dark"] nav.links a { color: #7aa7ff; }
+  footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
+  a { color: inherit; }
+</style>
+<!-- family:head --><link rel="stylesheet" href="../family/family.css">
+<link rel="alternate" hreflang="en" href="https://azun-k2.github.io/statuette/sensors.html">
+<link rel="alternate" hreflang="ar" href="https://azun-k2.github.io/statuette/ar/sensors.html">
+<link rel="alternate" hreflang="ca" href="https://azun-k2.github.io/statuette/ca/sensors.html">
+<link rel="alternate" hreflang="cs" href="https://azun-k2.github.io/statuette/cs/sensors.html">
+<link rel="alternate" hreflang="da" href="https://azun-k2.github.io/statuette/da/sensors.html">
+<link rel="alternate" hreflang="de" href="https://azun-k2.github.io/statuette/de/sensors.html">
+<link rel="alternate" hreflang="el" href="https://azun-k2.github.io/statuette/el/sensors.html">
+<link rel="alternate" hreflang="es" href="https://azun-k2.github.io/statuette/es/sensors.html">
+<link rel="alternate" hreflang="fi" href="https://azun-k2.github.io/statuette/fi/sensors.html">
+<link rel="alternate" hreflang="fr" href="https://azun-k2.github.io/statuette/fr/sensors.html">
+<link rel="alternate" hreflang="he" href="https://azun-k2.github.io/statuette/he/sensors.html">
+<link rel="alternate" hreflang="hi" href="https://azun-k2.github.io/statuette/hi/sensors.html">
+<link rel="alternate" hreflang="hr" href="https://azun-k2.github.io/statuette/hr/sensors.html">
+<link rel="alternate" hreflang="hu" href="https://azun-k2.github.io/statuette/hu/sensors.html">
+<link rel="alternate" hreflang="id" href="https://azun-k2.github.io/statuette/id/sensors.html">
+<link rel="alternate" hreflang="it" href="https://azun-k2.github.io/statuette/it/sensors.html">
+<link rel="alternate" hreflang="ja" href="https://azun-k2.github.io/statuette/ja/sensors.html">
+<link rel="alternate" hreflang="ko" href="https://azun-k2.github.io/statuette/ko/sensors.html">
+<link rel="alternate" hreflang="ms" href="https://azun-k2.github.io/statuette/ms/sensors.html">
+<link rel="alternate" hreflang="nb" href="https://azun-k2.github.io/statuette/nb/sensors.html">
+<link rel="alternate" hreflang="nl" href="https://azun-k2.github.io/statuette/nl/sensors.html">
+<link rel="alternate" hreflang="pl" href="https://azun-k2.github.io/statuette/pl/sensors.html">
+<link rel="alternate" hreflang="pt-BR" href="https://azun-k2.github.io/statuette/pt-br/sensors.html">
+<link rel="alternate" hreflang="pt-PT" href="https://azun-k2.github.io/statuette/pt-pt/sensors.html">
+<link rel="alternate" hreflang="ro" href="https://azun-k2.github.io/statuette/ro/sensors.html">
+<link rel="alternate" hreflang="ru" href="https://azun-k2.github.io/statuette/ru/sensors.html">
+<link rel="alternate" hreflang="sk" href="https://azun-k2.github.io/statuette/sk/sensors.html">
+<link rel="alternate" hreflang="sv" href="https://azun-k2.github.io/statuette/sv/sensors.html">
+<link rel="alternate" hreflang="th" href="https://azun-k2.github.io/statuette/th/sensors.html">
+<link rel="alternate" hreflang="tr" href="https://azun-k2.github.io/statuette/tr/sensors.html">
+<link rel="alternate" hreflang="uk" href="https://azun-k2.github.io/statuette/uk/sensors.html">
+<link rel="alternate" hreflang="vi" href="https://azun-k2.github.io/statuette/vi/sensors.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://azun-k2.github.io/statuette/zh-hans/sensors.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://azun-k2.github.io/statuette/zh-hant/sensors.html">
+<link rel="alternate" hreflang="x-default" href="https://azun-k2.github.io/statuette/sensors.html">
+<script src="../family/family.js" defer data-lang="zh-hans" data-page="sensors.html" data-langs="en,ar,ca,cs,da,de,el,es,fi,fr,he,hi,hr,hu,id,it,ja,ko,ms,nb,nl,pl,pt-br,pt-pt,ro,ru,sk,sv,th,tr,uk,vi,zh-hans,zh-hant"></script>
+<!-- /family:head -->
+</head>
+<body>
+<main>
+  <div class="hero">
+    <img class="icon" src="../icon-512.png" width="84" height="84"
+         alt="Statuette 应用图标：立在底座上的仪表">
+    <div>
+      <h1>Statuette Sensors</h1>
+      <p class="sub">为 App Store 版 Statuette 提供温度和风扇转速。</p>
+    </div>
+  </div>
+  <nav class="links">
+    <a href="./">首页</a>
+    <a href="support.html">支持</a>
+    <a href="privacy.html">隐私政策</a>
+    <a href="mailto:khangazun@gmail.com?subject=Statuette%20support">邮件支持</a>
+    <!-- family:nav --><a href="./#more-apps">更多应用</a>
+  <details class="family-lang"><summary aria-label="语言: 简体中文"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>简体中文</span></summary>
+    <ul>
+      <li><a href="../sensors.html" hreflang="en" lang="en" data-lang="en">English</a></li>
+      <li><a href="../ar/sensors.html" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+      <li><a href="../ca/sensors.html" hreflang="ca" lang="ca" data-lang="ca">Català</a></li>
+      <li><a href="../cs/sensors.html" hreflang="cs" lang="cs" data-lang="cs">Čeština</a></li>
+      <li><a href="../da/sensors.html" hreflang="da" lang="da" data-lang="da">Dansk</a></li>
+      <li><a href="../de/sensors.html" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+      <li><a href="../el/sensors.html" hreflang="el" lang="el" data-lang="el">Ελληνικά</a></li>
+      <li><a href="../es/sensors.html" hreflang="es" lang="es" data-lang="es">Español</a></li>
+      <li><a href="../fi/sensors.html" hreflang="fi" lang="fi" data-lang="fi">Suomi</a></li>
+      <li><a href="../fr/sensors.html" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+      <li><a href="../he/sensors.html" hreflang="he" lang="he" data-lang="he">עברית</a></li>
+      <li><a href="../hi/sensors.html" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      <li><a href="../hr/sensors.html" hreflang="hr" lang="hr" data-lang="hr">Hrvatski</a></li>
+      <li><a href="../hu/sensors.html" hreflang="hu" lang="hu" data-lang="hu">Magyar</a></li>
+      <li><a href="../id/sensors.html" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+      <li><a href="../it/sensors.html" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+      <li><a href="../ja/sensors.html" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+      <li><a href="../ko/sensors.html" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+      <li><a href="../ms/sensors.html" hreflang="ms" lang="ms" data-lang="ms">Bahasa Melayu</a></li>
+      <li><a href="../nb/sensors.html" hreflang="nb" lang="nb" data-lang="nb">Norsk bokmål</a></li>
+      <li><a href="../nl/sensors.html" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+      <li><a href="../pl/sensors.html" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+      <li><a href="../pt-br/sensors.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt-br">Português (Brasil)</a></li>
+      <li><a href="../pt-pt/sensors.html" hreflang="pt-PT" lang="pt-PT" data-lang="pt-pt">Português (Portugal)</a></li>
+      <li><a href="../ro/sensors.html" hreflang="ro" lang="ro" data-lang="ro">Română</a></li>
+      <li><a href="../ru/sensors.html" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+      <li><a href="../sk/sensors.html" hreflang="sk" lang="sk" data-lang="sk">Slovenčina</a></li>
+      <li><a href="../sv/sensors.html" hreflang="sv" lang="sv" data-lang="sv">Svenska</a></li>
+      <li><a href="../th/sensors.html" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+      <li><a href="../tr/sensors.html" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+      <li><a href="../uk/sensors.html" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+      <li><a href="../vi/sensors.html" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+      <li><a href="../zh-hans/sensors.html" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-hans" aria-current="true">简体中文</a></li>
+      <li><a href="../zh-hant/sensors.html" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-hant">繁體中文</a></li>
+    </ul>
+  </details><!-- /family:nav -->
+  </nav>
+
+  <section class="card">
+    <h2>为什么需要单独的辅助程序？</h2>
+    <p>来自 Mac App Store 的应用运行在 Apple 的 App Sandbox 中，不允许读取 Mac 的硬件传感器。Statuette Sensors 是一个小巧的免费配套应用，它在沙盒之外运行，读取传感器，并把数据共享给 Statuette。没有它，Statuette 仍会显示 CPU、内存、磁盘、网络和电池；有了它，温度和风扇卡片也会亮起来。</p>
+    <p class="muted">它没有窗口，也没有菜单栏项目，CPU 占用远低于 1%，只读取传感器，从不接触网络。</p>
+    <div class="cta">
+      <a class="button" href="https://github.com/azun-k2/statuette/releases/latest/download/Statuette-Sensors.zip">下载 Statuette Sensors</a>
+      <span class="small">macOS 14 或更高版本 · Apple 芯片和 Intel · 约 350 KB · <a href="https://github.com/azun-k2/statuette/releases">所有版本</a></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>安装</h2>
+    <picture>
+      <source srcset="../helper-steps-dark.png" media="(prefers-color-scheme: dark)">
+      <img class="steps" src="../helper-steps.png" width="2696" height="2184" loading="lazy" decoding="async"
+           alt="四个步骤。一：“下载”文件夹中已下载的 Statuette-Sensors.zip。二：连按 zip 后的同一个文件夹，里面现在有 Statuette Sensors 应用。三：“应用程序”文件夹中的这个应用。四：Statuette 的面板，温度卡片已显示数据。">
+    </picture>
+    <ol>
+      <li>解压下载的文件，把 <strong>Statuette Sensors</strong> 拖到“应用程序”文件夹。</li>
+      <li>打开它一次。屏幕上不会有任何变化：它在后台启动，并把自己添加到登录项，以便随时可用。</li>
+      <li>打开 Statuette。几秒钟内就会出现温度和风扇卡片。</li>
+    </ol>
+    <p class="muted">这个应用使用 Developer ID 签名，并经过 Apple 公证，因此打开时不会出现安全提示。</p>
+  </section>
+
+  <section class="card">
+    <h2>移除</h2>
+    <p>退出它并拖到废纸篓。如果想先停止它在登录时启动，请在“终端”中运行：</p>
+    <p><code>"/Applications/Statuette Sensors.app/Contents/MacOS/StatuetteSensors" --login-item=off</code></p>
+    <p class="muted">也可以在“系统设置” › “通用” › “登录项与扩展”中移除它。</p>
+  </section>
+
+  <section class="card">
+    <h2>验证下载</h2>
+    <p>每个版本都列出了其 zip 的 SHA-256 校验和。可用以下命令对比：</p>
+    <p><code>shasum -a 256 ~/Downloads/Statuette-Sensors.zip</code></p>
+  </section>
+
+  <footer><a href="./">Statuette</a> · <a href="support.html">支持</a> · <a href="privacy.html">隐私</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statuette Sensors · pembantu untuk Statuette</title>
+<meta name="description" content="Pembantu percuma yang membolehkan versi App Store Statuette menunjukkan suhu dan kelajuan kipas.">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta name="theme-color" content="#e3edfb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f1a" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Statuette Sensors">
+<meta property="og:description" content="Pembantu percuma yang membolehkan versi App Store Statuette menunjukkan suhu dan kelajuan kipas.">
+<meta property="og:image" content="../icon-512.png">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: rgba(0,0,0,0.08);
+    --accent: #3379f5; --accent-text: #ffffff; --code: #f0f0f2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 56px 16px 64px; }
+  .hero { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+  .icon { width: 84px; height: 84px; flex: none; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 20px; margin: 16px 0; }
+  .card h2 { font-size: 17px; margin: 0 0 8px; }
+  .card p, .card li { margin: 0 0 8px; color: var(--text); }
+  .card p.muted { color: var(--muted); font-size: 14px; }
+  ol { padding-left: 22px; margin: 0; }
+  li { margin-bottom: 6px; }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
+  .button { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 12px; }
+  .button:hover { filter: brightness(1.08); }
+  .steps { display: block; width: 100%; height: auto; margin: 2px 0 14px; border-radius: 10px; }
+  .small { font-size: 13px; color: var(--muted); }
+  code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
+  nav.links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; }
+  nav.links a { text-decoration: none; font-weight: 500; color: #2563d9; background: var(--card); border: 1px solid var(--line); padding: 8px 15px; border-radius: 999px; }
+  nav.links a:hover { border-color: var(--accent); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) nav.links a { color: #7aa7ff; } }
+  :root[data-theme="dark"] nav.links a { color: #7aa7ff; }
+  footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
+  a { color: inherit; }
+</style>
+<!-- family:head --><link rel="stylesheet" href="../family/family.css">
+<link rel="alternate" hreflang="en" href="https://azun-k2.github.io/statuette/sensors.html">
+<link rel="alternate" hreflang="ar" href="https://azun-k2.github.io/statuette/ar/sensors.html">
+<link rel="alternate" hreflang="ca" href="https://azun-k2.github.io/statuette/ca/sensors.html">
+<link rel="alternate" hreflang="cs" href="https://azun-k2.github.io/statuette/cs/sensors.html">
+<link rel="alternate" hreflang="da" href="https://azun-k2.github.io/statuette/da/sensors.html">
+<link rel="alternate" hreflang="de" href="https://azun-k2.github.io/statuette/de/sensors.html">
+<link rel="alternate" hreflang="el" href="https://azun-k2.github.io/statuette/el/sensors.html">
+<link rel="alternate" hreflang="es" href="https://azun-k2.github.io/statuette/es/sensors.html">
+<link rel="alternate" hreflang="fi" href="https://azun-k2.github.io/statuette/fi/sensors.html">
+<link rel="alternate" hreflang="fr" href="https://azun-k2.github.io/statuette/fr/sensors.html">
+<link rel="alternate" hreflang="he" href="https://azun-k2.github.io/statuette/he/sensors.html">
+<link rel="alternate" hreflang="hi" href="https://azun-k2.github.io/statuette/hi/sensors.html">
+<link rel="alternate" hreflang="hr" href="https://azun-k2.github.io/statuette/hr/sensors.html">
+<link rel="alternate" hreflang="hu" href="https://azun-k2.github.io/statuette/hu/sensors.html">
+<link rel="alternate" hreflang="id" href="https://azun-k2.github.io/statuette/id/sensors.html">
+<link rel="alternate" hreflang="it" href="https://azun-k2.github.io/statuette/it/sensors.html">
+<link rel="alternate" hreflang="ja" href="https://azun-k2.github.io/statuette/ja/sensors.html">
+<link rel="alternate" hreflang="ko" href="https://azun-k2.github.io/statuette/ko/sensors.html">
+<link rel="alternate" hreflang="ms" href="https://azun-k2.github.io/statuette/ms/sensors.html">
+<link rel="alternate" hreflang="nb" href="https://azun-k2.github.io/statuette/nb/sensors.html">
+<link rel="alternate" hreflang="nl" href="https://azun-k2.github.io/statuette/nl/sensors.html">
+<link rel="alternate" hreflang="pl" href="https://azun-k2.github.io/statuette/pl/sensors.html">
+<link rel="alternate" hreflang="pt-BR" href="https://azun-k2.github.io/statuette/pt-br/sensors.html">
+<link rel="alternate" hreflang="pt-PT" href="https://azun-k2.github.io/statuette/pt-pt/sensors.html">
+<link rel="alternate" hreflang="ro" href="https://azun-k2.github.io/statuette/ro/sensors.html">
+<link rel="alternate" hreflang="ru" href="https://azun-k2.github.io/statuette/ru/sensors.html">
+<link rel="alternate" hreflang="sk" href="https://azun-k2.github.io/statuette/sk/sensors.html">
+<link rel="alternate" hreflang="sv" href="https://azun-k2.github.io/statuette/sv/sensors.html">
+<link rel="alternate" hreflang="th" href="https://azun-k2.github.io/statuette/th/sensors.html">
+<link rel="alternate" hreflang="tr" href="https://azun-k2.github.io/statuette/tr/sensors.html">
+<link rel="alternate" hreflang="uk" href="https://azun-k2.github.io/statuette/uk/sensors.html">
+<link rel="alternate" hreflang="vi" href="https://azun-k2.github.io/statuette/vi/sensors.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://azun-k2.github.io/statuette/zh-hans/sensors.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://azun-k2.github.io/statuette/zh-hant/sensors.html">
+<link rel="alternate" hreflang="x-default" href="https://azun-k2.github.io/statuette/sensors.html">
+<script src="../family/family.js" defer data-lang="ms" data-page="sensors.html" data-langs="en,ar,ca,cs,da,de,el,es,fi,fr,he,hi,hr,hu,id,it,ja,ko,ms,nb,nl,pl,pt-br,pt-pt,ro,ru,sk,sv,th,tr,uk,vi,zh-hans,zh-hant"></script>
+<!-- /family:head -->
+</head>
+<body>
+<main>
+  <div class="hero">
+    <img class="icon" src="../icon-512.png" width="84" height="84"
+         alt="Ikon app Statuette: sebuah tolok berdiri di atas tapak">
+    <div>
+      <h1>Statuette Sensors</h1>
+      <p class="sub">Suhu dan kelajuan kipas untuk versi App Store Statuette.</p>
+    </div>
+  </div>
+  <nav class="links">
+    <a href="./">Laman utama</a>
+    <a href="support.html">Sokongan</a>
+    <a href="privacy.html">Dasar privasi</a>
+    <a href="mailto:khangazun@gmail.com?subject=Statuette%20support">Sokongan melalui e-mel</a>
+    <!-- family:nav --><a href="./#more-apps">Lagi app</a>
+  <details class="family-lang"><summary aria-label="Bahasa: Bahasa Melayu"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Bahasa Melayu</span></summary>
+    <ul>
+      <li><a href="../sensors.html" hreflang="en" lang="en" data-lang="en">English</a></li>
+      <li><a href="../ar/sensors.html" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+      <li><a href="../ca/sensors.html" hreflang="ca" lang="ca" data-lang="ca">Català</a></li>
+      <li><a href="../cs/sensors.html" hreflang="cs" lang="cs" data-lang="cs">Čeština</a></li>
+      <li><a href="../da/sensors.html" hreflang="da" lang="da" data-lang="da">Dansk</a></li>
+      <li><a href="../de/sensors.html" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+      <li><a href="../el/sensors.html" hreflang="el" lang="el" data-lang="el">Ελληνικά</a></li>
+      <li><a href="../es/sensors.html" hreflang="es" lang="es" data-lang="es">Español</a></li>
+      <li><a href="../fi/sensors.html" hreflang="fi" lang="fi" data-lang="fi">Suomi</a></li>
+      <li><a href="../fr/sensors.html" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+      <li><a href="../he/sensors.html" hreflang="he" lang="he" data-lang="he">עברית</a></li>
+      <li><a href="../hi/sensors.html" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      <li><a href="../hr/sensors.html" hreflang="hr" lang="hr" data-lang="hr">Hrvatski</a></li>
+      <li><a href="../hu/sensors.html" hreflang="hu" lang="hu" data-lang="hu">Magyar</a></li>
+      <li><a href="../id/sensors.html" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+      <li><a href="../it/sensors.html" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+      <li><a href="../ja/sensors.html" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+      <li><a href="../ko/sensors.html" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+      <li><a href="../ms/sensors.html" hreflang="ms" lang="ms" data-lang="ms" aria-current="true">Bahasa Melayu</a></li>
+      <li><a href="../nb/sensors.html" hreflang="nb" lang="nb" data-lang="nb">Norsk bokmål</a></li>
+      <li><a href="../nl/sensors.html" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+      <li><a href="../pl/sensors.html" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+      <li><a href="../pt-br/sensors.html" hreflang="pt-BR" lang="pt-BR" data-lang="pt-br">Português (Brasil)</a></li>
+      <li><a href="../pt-pt/sensors.html" hreflang="pt-PT" lang="pt-PT" data-lang="pt-pt">Português (Portugal)</a></li>
+      <li><a href="../ro/sensors.html" hreflang="ro" lang="ro" data-lang="ro">Română</a></li>
+      <li><a href="../ru/sensors.html" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+      <li><a href="../sk/sensors.html" hreflang="sk" lang="sk" data-lang="sk">Slovenčina</a></li>
+      <li><a href="../sv/sensors.html" hreflang="sv" lang="sv" data-lang="sv">Svenska</a></li>
+      <li><a href="../th/sensors.html" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+      <li><a href="../tr/sensors.html" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+      <li><a href="../uk/sensors.html" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+      <li><a href="../vi/sensors.html" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+      <li><a href="../zh-hans/sensors.html" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-hans">简体中文</a></li>
+      <li><a href="../zh-hant/sensors.html" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-hant">繁體中文</a></li>
+    </ul>
+  </details><!-- /family:nav -->
+  </nav>
+
+  <section class="card">
+    <h2>Mengapa pembantu berasingan?</h2>
+    <p>App dari Mac App Store berjalan dalam App Sandbox Apple, yang tidak membenarkan bacaan penderia perkakasan Mac. Statuette Sensors ialah app pengiring kecil dan percuma yang berjalan di luar sandbox, membaca penderia, dan berkongsi bacaannya dengan Statuette. Tanpanya, Statuette masih menunjukkan CPU, memori, cakera, rangkaian dan bateri; dengannya, kad Suhu dan Kipas turut menyala.</p>
+    <p class="muted">Ia tiada tetingkap atau item bar menu, menggunakan jauh di bawah 1% CPU, hanya membaca penderia, dan tidak pernah menyentuh rangkaian.</p>
+    <div class="cta">
+      <a class="button" href="https://github.com/azun-k2/statuette/releases/latest/download/Statuette-Sensors.zip">Muat turun Statuette Sensors</a>
+      <span class="small">macOS 14 atau lebih baharu · Apple silicon dan Intel · kira-kira 350 KB · <a href="https://github.com/azun-k2/statuette/releases">semua versi</a></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Pasang</h2>
+    <picture>
+      <source srcset="../helper-steps-dark.png" media="(prefers-color-scheme: dark)">
+      <img class="steps" src="../helper-steps.png" width="2696" height="2184" loading="lazy" decoding="async"
+           alt="Empat langkah. Satu, Statuette-Sensors.zip yang dimuat turun dalam folder Muat Turun. Dua, folder yang sama selepas zip diklik dua kali, kini mengandungi app Statuette Sensors. Tiga, app dalam folder Aplikasi. Empat, panel Statuette menunjukkan kad Suhu yang telah diisi.">
+    </picture>
+    <ol>
+      <li>Nyahzip muat turun dan seret <strong>Statuette Sensors</strong> ke folder Aplikasi anda.</li>
+      <li>Bukanya sekali. Tiada apa yang kelihatan berlaku: ia bermula di latar belakang dan menambah dirinya ke item log masuk anda supaya ia sentiasa tersedia.</li>
+      <li>Buka Statuette. Kad Suhu dan Kipas muncul dalam beberapa saat.</li>
+    </ol>
+    <p class="muted">App ini ditandatangani dengan Developer ID dan dinotarikan oleh Apple, jadi ia dibuka tanpa gesaan keselamatan.</p>
+  </section>
+
+  <section class="card">
+    <h2>Buang</h2>
+    <p>Keluar daripadanya dan seretnya ke Tong Sampah. Untuk menghentikannya daripada dilancarkan semasa log masuk dahulu, jalankan dalam Terminal:</p>
+    <p><code>"/Applications/Statuette Sensors.app/Contents/MacOS/StatuetteSensors" --login-item=off</code></p>
+    <p class="muted">Atau buangnya dalam Seting Sistem › Umum › Item Log Masuk &amp; Sambungan.</p>
+  </section>
+
+  <section class="card">
+    <h2>Sahkan muat turun</h2>
+    <p>Setiap keluaran menyenaraikan checksum SHA-256 bagi zipnya. Bandingkan dengan:</p>
+    <p><code>shasum -a 256 ~/Downloads/Statuette-Sensors.zip</code></p>
+  </section>
+
+  <footer><a href="./">Statuette</a> · <a href="support.html">Sokongan</a> · <a href="privacy.html">Privasi</a></footer>
+</main>
+</body>
+</html>
