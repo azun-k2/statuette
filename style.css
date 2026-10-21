@@ -1,0 +1,42 @@
+/* Statuette site: the small base stylesheet of the home page (family/modern.css does the landing look), light and dark. */
+:root {
+  --bg: #f5f5f7;
+  --card: #ffffff;
+  --ink: #1d1d1f;
+  --muted: #6e6e73;
+  --accent: #2563d9;
+  --line: rgba(0, 0, 0, 0.1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0f1a;
+    --card: #171a2a;
+    --ink: #f5f5f7;
+    --muted: #a1a1a6;
+    --accent: #7aa7ff;
+    --line: rgba(255, 255, 255, 0.12);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; }
+.hero { text-align: center; margin-bottom: 40px; }
+.icon { width: 104px; height: 104px; margin: 0 auto 14px; display: block; }
+h1 { font-size: 34px; margin: 0 0 6px; letter-spacing: -0.4px; }
+.tagline { color: var(--muted); margin: 0; font-size: 18px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px 26px; margin-bottom: 18px; }
+h2 { font-size: 20px; margin: 0 0 12px; }
+p, li { color: var(--ink); }
+p.note, p.muted, li.note { color: var(--muted); }
+ul { padding-left: 22px; }
+li { margin: 5px 0; }
+a { color: var(--accent); }
+nav.links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+nav.links a { text-decoration: none; font-weight: 500; border: 1px solid var(--line); background: var(--card); padding: 9px 16px; border-radius: 999px; }
+footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 34px; }
+footer a { color: var(--muted); }

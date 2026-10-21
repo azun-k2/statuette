@@ -14,46 +14,7 @@
 <meta property="og:description" content="Statuette hiển thị CPU, bộ nhớ, ổ đĩa, mạng và pin trên thanh menu, kèm một bảng chi tiết đằng sau mỗi con số.">
 <meta property="og:image" content="../icon-512.png">
 <meta property="og:type" content="website">
-<style>
-  :root {
-    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: rgba(0,0,0,0.08);
-    --accent: #3379f5; --accent-text: #ffffff; --code: #f0f0f2;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 56px 16px 64px; }
-  .hero { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
-  .icon { width: 84px; height: 84px; flex: none; }
-  h1 { font-size: 30px; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.02em; }
-  .sub { color: var(--muted); margin: 0; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 20px; margin: 16px 0; }
-  .card h2 { font-size: 17px; margin: 0 0 8px; }
-  .card p, .card li { margin: 0 0 8px; color: var(--text); }
-  .card p.muted { color: var(--muted); font-size: 14px; }
-  ol { padding-left: 22px; margin: 0; }
-  li { margin-bottom: 6px; }
-  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
-  .button { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 12px; }
-  .button:hover { filter: brightness(1.08); }
-  .steps { display: block; width: 100%; height: auto; margin: 2px 0 14px; border-radius: 10px; }
-  .small { font-size: 13px; color: var(--muted); }
-  code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
-  nav.links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; }
-  nav.links a { text-decoration: none; font-weight: 500; color: #2563d9; background: var(--card); border: 1px solid var(--line); padding: 8px 15px; border-radius: 999px; }
-  nav.links a:hover { border-color: var(--accent); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) nav.links a { color: #7aa7ff; } }
-  :root[data-theme="dark"] nav.links a { color: #7aa7ff; }
-  footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
-  a { color: inherit; }
-</style>
+<link rel="stylesheet" href="../style.css">
 <!-- family:head --><link rel="stylesheet" href="../family/family.css">
 <link rel="stylesheet" href="../family/modern.css">
 <link rel="alternate" hreflang="en" href="https://statuette.khangazun.com/">
@@ -93,20 +54,21 @@
 <link rel="alternate" hreflang="x-default" href="https://statuette.khangazun.com/">
 <script src="../family/family.js" defer data-lang="vi" data-page="index.html" data-langs="en,ar,ca,cs,da,de,el,es,fi,fr,he,hi,hr,hu,id,it,ja,ko,ms,nb,nl,pl,pt-br,pt-pt,ro,ru,sk,sv,th,tr,uk,vi,zh-hans,zh-hant"></script>
 <!-- /family:head -->
+<link rel="stylesheet" href="../demo.css">
 </head>
 <body>
 <main>
   <div class="hero">
-    <img class="icon" src="../icon-512.png" width="84" height="84" alt="Biểu tượng ứng dụng Statuette: một đồng hồ đo đứng trên bệ">
-    <div>
-      <h1>Statuette</h1>
-      <p class="sub">Trình theo dõi hệ thống cho thanh menu của bạn.</p>
-    </div>
+  <div class="hero-pill">⚡ Ngay trên thanh menu · Không tài khoản, không mạng</div>
+  <img class="icon" src="../icon-512.png" width="84" height="84" alt="Statuette">
+  <h1>Nhịp đập của máy Mac.<br><span class="gradient-text">Luôn trong tầm mắt, không bao giờ vướng víu.</span></h1>
+  <p class="tagline">CPU, bộ nhớ, ổ đĩa, mạng và pin trên thanh menu, kèm một bảng chi tiết đằng sau mỗi con số.</p>
   <!-- family:stores -->
   <div class="family-stores start">
     <a class="family-store" href="https://apps.apple.com/app/id6814715725?platform=mac"><img src="../family/badges/mac-vi.svg" alt="Tải về trên Mac App Store" height="46"></a>
   </div>
   <!-- /family:stores -->
+  <p class="platform-banner">Có cho Mac</p>
   <nav class="links">
     <a href="./">Trang chủ</a>
     <a href="support.html">Hỗ trợ</a>
@@ -152,7 +114,50 @@
     </ul>
   </details><!-- /family:nav -->
   </nav>
+</div>
+
+<div class="demo-wrapper" id="demo">
+  <div class="st-box" role="group" aria-label="Bản demo: các số liệu mẫu trên một thanh menu" data-busy="Giả lập CPU đang bận" data-calm="Trở lại bình thường">
+    <div class="st-bar">
+      <div class="st-item" data-k="cpu"><span class="st-tag">CPU</span><span class="st-val" id="st-cpu">12%</span><span class="st-sub">mức tải</span></div>
+      <div class="st-item" data-k="mem"><span class="st-tag">Bộ nhớ</span><span class="st-val" id="st-mem">58%</span><span class="st-sub">áp lực</span></div>
+      <div class="st-item" data-k="dsk"><span class="st-tag">Ổ đĩa</span><span class="st-val" id="st-dsk">820 GB</span><span class="st-sub">còn trống</span></div>
+      <div class="st-item" data-k="net"><span class="st-tag">Mạng</span><span class="st-val" id="st-net">4.8 MB/s</span><span class="st-sub">mỗi giây</span></div>
+      <div class="st-item" data-k="bat"><span class="st-tag">Pin</span><span class="st-val" id="st-bat">86%</span><span class="st-sub">mức sạc</span></div>
+    </div>
+    <button type="button" class="st-btn" id="st-toggle" aria-pressed="false">Giả lập CPU đang bận</button>
+    <p class="demo-note">Số liệu mẫu, để minh hoạ. Đặt cho bất kỳ chỉ số nào một ngưỡng cảnh báo và một ngưỡng nghiêm trọng, giá trị sẽ chuyển sang màu cam rồi màu đỏ. Cảnh báo tắt cho đến khi bạn bật lên.</p>
   </div>
+</div>
+<script>
+(function () {
+  var box = document.querySelector('.st-box'); if (!box) return;
+  var v = { cpu: 12, mem: 58, dsk: 820, net: 4.8, bat: 86 }, busy = false, timer = null;
+  var el = function (k) { return document.getElementById('st-' + k); };
+  var toggle = document.getElementById('st-toggle');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function paint() {
+    el('cpu').textContent = Math.round(v.cpu) + '%'; el('mem').textContent = Math.round(v.mem) + '%';
+    el('dsk').textContent = Math.round(v.dsk) + ' GB'; el('net').textContent = v.net.toFixed(1) + ' MB/s'; el('bat').textContent = Math.round(v.bat) + '%';
+    var c = el('cpu'); c.classList.toggle('warn', v.cpu >= 60 && v.cpu < 85); c.classList.toggle('crit', v.cpu >= 85);
+  }
+  function tick() {
+    var target = busy ? 93 : 14;
+    v.cpu += (target - v.cpu) * 0.35 + (Math.random() - 0.5) * 4; v.cpu = Math.max(3, Math.min(99, v.cpu));
+    v.mem += (Math.random() - 0.5) * 1.2; v.net = Math.max(0.2, v.net + (Math.random() - 0.5) * 1.6); paint();
+  }
+  toggle.addEventListener('click', function () {
+    busy = !busy; toggle.setAttribute('aria-pressed', busy); toggle.textContent = box.getAttribute(busy ? 'data-calm' : 'data-busy');
+    if (reduce) { v.cpu = busy ? 93 : 12; paint(); }
+  });
+  function start() { if (!reduce && !timer) timer = setInterval(tick, 1100); }
+  function stop() { clearInterval(timer); timer = null; }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { if (en[0].isIntersecting) start(); else stop(); }).observe(box); else start();
+  paint();
+})();
+</script>
+
+  
 
   <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -175,7 +180,50 @@
     <p>Đặt cho bất kỳ chỉ số nào một ngưỡng cảnh báo và một ngưỡng nghiêm trọng. Khi vượt qua, giá trị chuyển sang màu cam rồi màu đỏ, trên thanh menu và trên thẻ của nó. Mọi thứ đều tắt cho đến khi bạn bật lên.</p>
   </section>
 
-  <section class="card">
+  <section class="card comparison-card" id="comparison">
+  <h2>Mở cửa sổ theo dõi so với Statuette</h2>
+  <p class="section-lead">Các số liệu của máy Mac, không phải đi tìm.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Tiêu chí</th>
+          <th>Một cửa sổ phải mở</th>
+          <th class="highlight-col">Statuette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Nhìn nhanh</strong></td>
+          <td>Mở một cửa sổ rồi mới nhìn</td>
+          <td class="highlight-col"><strong>CPU, bộ nhớ, ổ đĩa, mạng và pin nằm ngay trên thanh menu</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Chi tiết</strong></td>
+          <td>Lục qua các thẻ và danh sách</td>
+          <td class="highlight-col"><strong>Bấm vào một con số để mở bảng: đồng hồ vòng, biểu đồ nhỏ, biểu đồ 1, 6 và 24 giờ, bản đồ nhiệt của từng lõi</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Thanh menu của bạn</strong></td>
+          <td>Nhận những gì được cho sẵn</td>
+          <td class="highlight-col"><strong>Chọn chỉ số, thứ tự, biểu tượng hay chữ, và tông màu</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Cảnh báo</strong></td>
+          <td>Bạn phải nhớ tự kiểm tra</td>
+          <td class="highlight-col"><strong>Ngưỡng cảnh báo và nghiêm trọng làm giá trị chuyển sang màu cam rồi màu đỏ</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Quyền riêng tư</strong></td>
+          <td>Tuỳ từng ứng dụng</td>
+          <td class="highlight-col"><strong>Không tài khoản, không kết nối mạng nào, không thu thập gì</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
     <h2>Quyền riêng tư</h2>
     <p>Statuette chỉ đọc. Ứng dụng không có tài khoản, không tạo bất kỳ kết nối mạng nào và không thu thập gì cả. <a href="privacy.html">Chính sách quyền riêng tư</a> nói điều tương tự một cách chi tiết hơn.</p>
     <p class="muted">Có câu hỏi, hoặc có gì đó không hoạt động? Hãy xem <a href="support.html">Hỗ trợ</a>.</p>

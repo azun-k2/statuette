@@ -14,46 +14,7 @@
 <meta property="og:description" content="Statuette shows CPU, memory, disk, network and battery in the menu bar, with a panel of detail behind every number.">
 <meta property="og:image" content="icon-512.png">
 <meta property="og:type" content="website">
-<style>
-  :root {
-    --bg: #f5f5f7; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: rgba(0,0,0,0.08);
-    --accent: #3379f5; --accent-text: #ffffff; --code: #f0f0f2;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0d0f1a; --card: #171a2a; --text: #f5f5f7; --muted: #a1a1a6; --line: rgba(255,255,255,0.1); --code: #20243a;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 56px 16px 64px; }
-  .hero { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
-  .icon { width: 84px; height: 84px; flex: none; }
-  h1 { font-size: 30px; line-height: 1.15; margin: 0 0 4px; letter-spacing: -0.02em; }
-  .sub { color: var(--muted); margin: 0; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 20px; margin: 16px 0; }
-  .card h2 { font-size: 17px; margin: 0 0 8px; }
-  .card p, .card li { margin: 0 0 8px; color: var(--text); }
-  .card p.muted { color: var(--muted); font-size: 14px; }
-  ol { padding-left: 22px; margin: 0; }
-  li { margin-bottom: 6px; }
-  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 14px; }
-  .button { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 12px; }
-  .button:hover { filter: brightness(1.08); }
-  .steps { display: block; width: 100%; height: auto; margin: 2px 0 14px; border-radius: 10px; }
-  .small { font-size: 13px; color: var(--muted); }
-  code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 6px; word-break: break-all; }
-  nav.links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; }
-  nav.links a { text-decoration: none; font-weight: 500; color: #2563d9; background: var(--card); border: 1px solid var(--line); padding: 8px 15px; border-radius: 999px; }
-  nav.links a:hover { border-color: var(--accent); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) nav.links a { color: #7aa7ff; } }
-  :root[data-theme="dark"] nav.links a { color: #7aa7ff; }
-  footer { margin-top: 32px; font-size: 13px; color: var(--muted); }
-  a { color: inherit; }
-</style>
+<link rel="stylesheet" href="style.css">
 <!-- family:head --><link rel="stylesheet" href="family/family.css">
 <link rel="stylesheet" href="family/modern.css">
 <link rel="alternate" hreflang="en" href="https://statuette.khangazun.com/">
@@ -93,20 +54,21 @@
 <link rel="alternate" hreflang="x-default" href="https://statuette.khangazun.com/">
 <script src="family/family.js" defer data-lang="en" data-page="index.html" data-langs="en,ar,ca,cs,da,de,el,es,fi,fr,he,hi,hr,hu,id,it,ja,ko,ms,nb,nl,pl,pt-br,pt-pt,ro,ru,sk,sv,th,tr,uk,vi,zh-hans,zh-hant"></script>
 <!-- /family:head -->
+<link rel="stylesheet" href="demo.css">
 </head>
 <body>
 <main>
   <div class="hero">
-    <img class="icon" src="icon-512.png" width="84" height="84" alt="Statuette app icon: a gauge standing on a plinth">
-    <div>
-      <h1>Statuette</h1>
-      <p class="sub">A system monitor for your menu bar.</p>
-    </div>
+  <div class="hero-pill">⚡ In your menu bar · No account, no network</div>
+  <img class="icon" src="icon-512.png" width="84" height="84" alt="Statuette">
+  <h1>Your Mac&#x27;s pulse.<br><span class="gradient-text">Always in sight, never in the way.</span></h1>
+  <p class="tagline">CPU, memory, disk, network and battery in the menu bar, with a panel of detail behind every number.</p>
   <!-- family:stores -->
   <div class="family-stores start">
     <a class="family-store" href="https://apps.apple.com/app/id6814715725?platform=mac"><img src="family/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" height="46"></a>
   </div>
   <!-- /family:stores -->
+  <p class="platform-banner">Available for Mac</p>
   <nav class="links">
     <a href="./">Home</a>
     <a href="support.html">Support</a>
@@ -152,7 +114,50 @@
     </ul>
   </details><!-- /family:nav -->
   </nav>
+</div>
+
+<div class="demo-wrapper" id="demo">
+  <div class="st-box" role="group" aria-label="Demo: sample readings in a menu bar" data-busy="Simulate a busy CPU" data-calm="Back to calm">
+    <div class="st-bar">
+      <div class="st-item" data-k="cpu"><span class="st-tag">CPU</span><span class="st-val" id="st-cpu">12%</span><span class="st-sub">load</span></div>
+      <div class="st-item" data-k="mem"><span class="st-tag">Memory</span><span class="st-val" id="st-mem">58%</span><span class="st-sub">pressure</span></div>
+      <div class="st-item" data-k="dsk"><span class="st-tag">Disk</span><span class="st-val" id="st-dsk">820 GB</span><span class="st-sub">free</span></div>
+      <div class="st-item" data-k="net"><span class="st-tag">Network</span><span class="st-val" id="st-net">4.8 MB/s</span><span class="st-sub">per second</span></div>
+      <div class="st-item" data-k="bat"><span class="st-tag">Battery</span><span class="st-val" id="st-bat">86%</span><span class="st-sub">charge</span></div>
+    </div>
+    <button type="button" class="st-btn" id="st-toggle" aria-pressed="false">Simulate a busy CPU</button>
+    <p class="demo-note">Sample numbers, for illustration. Give any reading a warning level and a critical level and its value turns orange, then red. Alerts are off until you switch them on.</p>
   </div>
+</div>
+<script>
+(function () {
+  var box = document.querySelector('.st-box'); if (!box) return;
+  var v = { cpu: 12, mem: 58, dsk: 820, net: 4.8, bat: 86 }, busy = false, timer = null;
+  var el = function (k) { return document.getElementById('st-' + k); };
+  var toggle = document.getElementById('st-toggle');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function paint() {
+    el('cpu').textContent = Math.round(v.cpu) + '%'; el('mem').textContent = Math.round(v.mem) + '%';
+    el('dsk').textContent = Math.round(v.dsk) + ' GB'; el('net').textContent = v.net.toFixed(1) + ' MB/s'; el('bat').textContent = Math.round(v.bat) + '%';
+    var c = el('cpu'); c.classList.toggle('warn', v.cpu >= 60 && v.cpu < 85); c.classList.toggle('crit', v.cpu >= 85);
+  }
+  function tick() {
+    var target = busy ? 93 : 14;
+    v.cpu += (target - v.cpu) * 0.35 + (Math.random() - 0.5) * 4; v.cpu = Math.max(3, Math.min(99, v.cpu));
+    v.mem += (Math.random() - 0.5) * 1.2; v.net = Math.max(0.2, v.net + (Math.random() - 0.5) * 1.6); paint();
+  }
+  toggle.addEventListener('click', function () {
+    busy = !busy; toggle.setAttribute('aria-pressed', busy); toggle.textContent = box.getAttribute(busy ? 'data-calm' : 'data-busy');
+    if (reduce) { v.cpu = busy ? 93 : 12; paint(); }
+  });
+  function start() { if (!reduce && !timer) timer = setInterval(tick, 1100); }
+  function stop() { clearInterval(timer); timer = null; }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { if (en[0].isIntersecting) start(); else stop(); }).observe(box); else start();
+  paint();
+})();
+</script>
+
+  
 
   <!-- family:shot --><figure class="shot"><img src="img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -176,7 +181,50 @@
        then red, in the menu bar and on its card. Everything is off until you switch it on.</p>
   </section>
 
-  <section class="card">
+  <section class="card comparison-card" id="comparison">
+  <h2>Opening a monitor window vs Statuette</h2>
+  <p class="section-lead">Your Mac&#x27;s readings, without hunting for them.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>A window you open</th>
+          <th class="highlight-col">Statuette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>At a glance</strong></td>
+          <td>Open a window, then look</td>
+          <td class="highlight-col"><strong>CPU, memory, disk, network and battery sit in the menu bar</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Detail</strong></td>
+          <td>Dig through tabs and lists</td>
+          <td class="highlight-col"><strong>Click a number for a panel: rings, sparklines, 1, 6 and 24 hour graphs, a heat map of every core</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Your menu bar</strong></td>
+          <td>Take what you are given</td>
+          <td class="highlight-col"><strong>Choose the readings, their order, icons or text, and the colour theme</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Warnings</strong></td>
+          <td>You have to remember to check</td>
+          <td class="highlight-col"><strong>A warning and a critical level turn the value orange, then red</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Privacy</strong></td>
+          <td>Varies from app to app</td>
+          <td class="highlight-col"><strong>No account, no network connection of any kind, nothing collected</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
     <h2>Privacy</h2>
     <p>Statuette only reads. It has no account, makes no network connection of any kind and collects
        nothing. The <a href="privacy.html">privacy policy</a> says the same at more length.</p>
